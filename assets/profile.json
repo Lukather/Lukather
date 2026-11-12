@@ -2,7 +2,7 @@
   "stats": {
     "repos": 9,
     "stars": 5,
-    "commits": 429,
+    "commits": 430,
     "followers": 3,
     "since": "2014"
   },
@@ -62,67 +62,6 @@
       "topics": []
     }
   },
-  "generated": "2026-11-12T20:08:22+00:00",
-  "posts": [
-    {
-      "title": "Ho anche scritto un DevLog per spiegare da dove arriva l'idea del gioco.https://lukather.itch.io/corridor-3-…",
-      "url": "https://mastodon.uno/@Lukather/117592719232459052",
-      "date": "2026-11-10"
-    },
-    {
-      "title": "Vabè mi hanno convinto a partecipare alla #gamejam su Itch.io (credo sponsored by github) con il mio fantast…",
-      "url": "https://mastodon.uno/@Lukather/117592716998503500",
-      "date": "2026-11-10"
-    },
-    {
-      "title": "Sto sviluppando un piccolo progetto per censire gli spazi verdi di Milano (quelli ben gestiti ma sopratutto…",
-      "url": "https://mastodon.uno/@Lukather/117581478272789384",
-      "date": "2026-11-08"
-    },
-    {
-      "title": "Ultime aggiunte al mio #homelab - LaraPaper (TRMNL Server): https://github.com/usetrmnl/larapaper - TREK (Tr…",
-      "url": "https://mastodon.uno/@Lukather/117569858332526719",
-      "date": "2026-11-06"
-    },
-    {
-      "title": "Mi sto divertendo con LaraPaper e un Kobo che avevo 'in avanzo'. #selfhosting",
-      "url": "https://mastodon.uno/@Lukather/117566309571079619",
-      "date": "2026-11-05"
-    },
-    {
-      "title": "Ah è uscito il numero di ferragosto (o quasi).Buona lettura! #indiegames https://news.ilgiocatore.net/p/indi…",
-      "url": "https://mastodon.uno/@Lukather/117094363840879002",
-      "date": "2026-08-14"
-    },
-    {
-      "title": "Io prendo sempre in giro chi ama il #retrogaming dicendo che \"puzza di vecchio\". Sempre io mi porto in vacan…",
-      "url": "https://mastodon.uno/@Lukather/117087121735562758",
-      "date": "2026-08-13"
-    },
-    {
-      "title": "Sto giocando a The Invincible e mi ha fatto venire voglia di leggere qualcosa di Stanisław Lem. #indiegames",
-      "url": "https://mastodon.uno/@Lukather/116889550631754328",
-      "date": "2026-07-09"
-    },
-    {
-      "title": "Ah ci stavo pensando l'altro giorno \"chissà Nivalis che fine ha fatto\" e mi è arrivato poco fa il comunicato…",
-      "url": "https://mastodon.uno/@Lukather/116844023697254965",
-      "date": "2026-07-01"
-    },
-    {
-      "title": "Nuovo numero della newsletter out now. Stavolta 3 giochi indie completamente diversi tra loro per soddisfare…",
-      "url": "https://mastodon.uno/@Lukather/116652381530643203",
-      "date": "2026-05-28"
-    },
-    {
-      "title": "29 downloads in a few days seems bad but it's a lot for me. More that this I hope to receive feedback that w…",
-      "url": "https://mastodon.uno/@Lukather/116591026788890215",
-      "date": "2026-05-17"
-    },
-    {
-      "title": "I've built a plugin for Obsidian that let's you receive reminder and alert about incoming tasks directly on…",
-      "url": "https://mastodon.uno/@Lukather/116572124554198528",
-      "date": "2026-05-14"
-    }
-  ]
+  "generated": "2026-11-12T21:18:34+00:00",
+  "posts": []
 }
