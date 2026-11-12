@@ -103,21 +103,25 @@ DOT = {
 
 
 def pixel_text(text, x, y, px, ink, shadow=None, stagger=0.03, delay=0.0, gap=1):
-    """Text as a real pixel grid; `shadow` draws the hard offset copy behind it."""
+    """Text as a real pixel grid; `shadow` draws the hard offset copy behind it.
+
+    Coordinates are absolute: a CSS animation on a group overrides its `transform`
+    presentation attribute (so a translated group that is also animated collapses to
+    the origin in browsers -- GitHub renders the real thing, rsvg does not).
+    """
     out, cx = [], x
     for i, ch in enumerate(str(text).upper()):
         rows = DOT.get(ch, DOT[" "]).split("|")
-        px_boxes = [(c, r) for r, row in enumerate(rows) for c, cell in enumerate(row) if cell == "#"]
-        for layer, (fill, off, dly) in enumerate([(shadow, px * .9, delay + i * stagger),
-                                                  (ink, 0, delay + i * stagger)] if shadow
-                                                 else [(ink, 0, delay + i * stagger)]):
+        boxes = [(c, r) for r, row in enumerate(rows) for c, cell in enumerate(row) if cell == "#"]
+        for fill in ([shadow, ink] if shadow else [ink]):
             if fill is None:
                 continue
-            out.append(f'<g class="pop" style="animation-delay:{dly:.2f}s" transform="translate({cx + off:.1f},{y + off:.1f})">')
-            out.append(f'<g fill="{fill}">')
-            out.append("".join(f'<rect x="{c * px}" y="{r * px}" width="{px}" height="{px}"/>' for c, r in px_boxes))
-            out.append("</g></g>")
-        cx += 6 * px * (1 if not gap else 1)
+            off = px * 0.9 if fill == shadow else 0
+            out.append(f'<g class="pop" style="animation-delay:{delay + i * stagger:.2f}s" fill="{fill}">')
+            out.append("".join(f'<rect x="{cx + c * px + off:.1f}" y="{y + r * px + off:.1f}" '
+                               f'width="{px}" height="{px}"/>' for c, r in boxes))
+            out.append("</g>")
+        cx += 6 * px
     return "".join(out), cx
 
 
@@ -598,11 +602,11 @@ def target_card(i, t, accent):
     badge = ""
     if new:
         bw = 56
-        badge = (f'<g class="pop" style="animation-delay:{.45 + i * .08:.2f}s" '
-                 f'transform="translate({x0 + cw - 16 - bw},{chip_y})">'
-                 f'<rect width="{bw}" height="21" fill="{fill_c}" fill-opacity="{fill_o}"/>'
-                 f'<rect width="{bw}" height="21" fill="none" stroke="{accent}" stroke-opacity=".9"/>'
-                 f'<text x="{bw / 2:.0f}" y="15" font-family="{MONO}" font-size="10" letter-spacing="1" '
+        bx, by = x0 + cw - 16 - bw, chip_y
+        badge = (f'<g class="pop" style="animation-delay:{.45 + i * .08:.2f}s">'
+                 f'<rect x="{bx:.0f}" y="{by:.0f}" width="{bw}" height="21" fill="{fill_c}" fill-opacity="{fill_o}"/>'
+                 f'<rect x="{bx:.0f}" y="{by:.0f}" width="{bw}" height="21" fill="none" stroke="{accent}" stroke-opacity=".9"/>'
+                 f'<text x="{bx + bw / 2:.0f}" y="{by + 15:.0f}" font-family="{MONO}" font-size="10" letter-spacing="1" '
                  f'fill="{txt_c}" text-anchor="middle">NEW</text></g>')
     star = (f'<text x="{x0 + cw - 16}" y="{y0 + 28}" font-family="{MONO}" font-size="12" font-weight="700" '
             f'fill="{INK}" text-anchor="end">★ {t["stars"]}</text>') if t["stars"] else ""
@@ -644,10 +648,11 @@ def target_row(i, t, accent):
         nw = 62
         right_edge = W - 34 - (len(t["tag"]) * 7.6 + 34 if t["tag"] else 4)
         nx = min(82 + lab_w + 18, right_edge - nw)
-        newbadge = (f'<g class="pop" style="animation-delay:{.5 + i * .08:.2f}s" transform="translate({nx:.0f},20)">'
-                    f'<rect width="{nw}" height="19" fill="{fill_c}" fill-opacity="{fill_o}"/>'
-                    f'<rect width="{nw}" height="19" fill="none" stroke="{accent}" stroke-opacity=".9"/>'
-                    f'<text x="{nw / 2:.0f}" y="14" font-family="{MONO}" font-size="10" letter-spacing="1" '
+        ny = 20
+        newbadge = (f'<g class="pop" style="animation-delay:{.5 + i * .08:.2f}s">'
+                    f'<rect x="{nx:.0f}" y="{ny}" width="{nw}" height="19" fill="{fill_c}" fill-opacity="{fill_o}"/>'
+                    f'<rect x="{nx:.0f}" y="{ny}" width="{nw}" height="19" fill="none" stroke="{accent}" stroke-opacity=".9"/>'
+                    f'<text x="{nx + nw / 2:.0f}" y="{ny + 14}" font-family="{MONO}" font-size="10" letter-spacing="1" '
                     f'fill="{txt_c}" text-anchor="middle">NEW</text></g>')
     desc_el = (f'<text x="82" y="{h - 20}" font-family="{MONO}" font-size="12.5" fill="{DIM}">{esc(desc)}</text>'
                if desc else f'<text x="82" y="{h - 20}" font-family="{MONO}" font-size="12.5" fill="{DIM}" '
