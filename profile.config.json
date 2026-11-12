@@ -1,0 +1,67 @@
+{
+  "login": "Lukather",
+  "theme": "gameboy",
+  "targets_layout": "grid",
+  "name": [
+    "LORENZO",
+    "STRAMBI"
+  ],
+  "handle": "lukather",
+  "role": "AI APPLIED @ EPAM",
+  "stack": [
+    "LLM ENGINEERING",
+    "PYTHON",
+    "TYPESCRIPT",
+    "HOMELAB",
+    "SELF-HOSTING"
+  ],
+  "location": "MILAN · IT",
+  "about": "I work on Applied AI at EPAM. I build AI systems that survive contact with real users, and I care about the boring parts: clear documentation, visible behaviour, nothing surprising in production. Away from work I run a homelab, write about games in my newsletter Il giocatore, and ship small tools nobody asked for.",
+  "targets": [
+    {
+      "repo": "obsidian-reminder-telegram",
+      "tag": "TYPESCRIPT"
+    },
+    {
+      "repo": "deck-ai-assistant",
+      "tag": "PYTHON"
+    },
+    {
+      "repo": "corridor-3-night-shift",
+      "tag": "HTML",
+      "blurb": "A small game about shifts, made for Game Off 2026"
+    },
+    {
+      "repo": "opencode-go-report",
+      "tag": "HTML"
+    },
+    {
+      "repo": "roundtable-knights",
+      "label": "ROUNDTABLE KNIGHTS",
+      "tag": "TYPESCRIPT",
+      "blurb": "Knights, a round table and too much TypeScript"
+    },
+    {
+      "repo": "gw2companion",
+      "tag": "JAVASCRIPT"
+    }
+  ],
+  "contacts": [
+    {
+      "label": "MASTODON",
+      "url": "https://mastodon.uno/@Lukather"
+    },
+    {
+      "label": "NEWSLETTER",
+      "url": "https://news.ilgiocatore.net"
+    },
+    {
+      "label": "LINKTREE",
+      "url": "https://linktr.ee/Lukatherlive"
+    },
+    {
+      "label": "STEAM",
+      "url": "https://steamcommunity.com/id/lukather"
+    }
+  ]
+}
