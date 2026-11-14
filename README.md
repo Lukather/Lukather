@@ -5,7 +5,7 @@
   The "Refresh profile" GitHub Action does this daily with fresh stats.
 -->
 
-<p align="center"><img src="assets/stage/hero.svg" width="100%" alt="Lorenzo Strambi, Ai Applied @ Epam. 432 commits, 5 stars, 9 public repos." /></p>
+<p align="center"><img src="assets/stage/hero.svg" width="100%" alt="Lorenzo Strambi, Ai Applied @ Epam. 433 commits, 5 stars, 9 public repos." /></p>
 
 <p align="center"><img src="assets/stage/about.svg" width="100%" alt="I work on Applied AI at EPAM. I build AI systems that survive contact with real users, and I care about the boring parts: clear documentation, visible behaviour, nothing surprising in production. Away from work I run a homelab, write about games in my newsletter Il giocatore, and ship small tools nobody asked for." /></p>
 
